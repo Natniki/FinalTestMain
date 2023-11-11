@@ -4,47 +4,29 @@
  лучше обойтись исключительно массивами.
 */
 
-class Program
-{
-    static void Main(string[] args)
+void ChechArray(string[] array, string[] resultArray){
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
     {
-        string[] inputArray = new string[] { "Hello", "2", "world", ":-)" };
-        int count = 0;
-
-        if (inputArray != null) // Проверка на null для inputArray
+    if(array[i].Length <= 3)
         {
-            foreach (string str in inputArray)
-            {
-                if (str != null) // Проверка на null для str
-                {
-                    if (str.Length <= 3)
-                    {
-                        count++;
-                    }
-                }
-            }
+        resultArray[count] = array[i];
+        count++;
         }
-
-        string[] resultArray = new string[count];
-        int currentIndex = 0;
-
-        if (inputArray != null)
-        {
-            foreach (string str in inputArray)
-            {
-                if (str != null)
-                {
-                    if (str.Length <= 3)
-                    {
-                        resultArray[currentIndex] = str;
-                        currentIndex++;
-                    }
-                }
-            }
-        }
-
-        Console.WriteLine("Result Array: [" + string.Join(", ", resultArray) + "]");
     }
 }
+
+void PrintArray(string[] array){
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+
+string[] array = new string[5] {"123", "23", "hello", "world", "res"};
+string[] resultArray = new string[array.Length];
+ChechArray(array, resultArray);
+PrintArray(resultArray);
 
 
