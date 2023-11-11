@@ -5,6 +5,8 @@
 */
 
 void ChechArray(string[] array, string[] resultArray){
+    //метод перебирает все элементы массива 
+    //и возвращает только элементы длина которых меньше либо равна 3
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
@@ -16,7 +18,7 @@ void ChechArray(string[] array, string[] resultArray){
     }
 }
 
-void PrintArray(string[] array){
+void PrintArray(string[] array){//выводит в терминал новый массив
     for (int i = 0; i < array.Length; i++)
     {
         Console.Write($"{array[i]} ");
